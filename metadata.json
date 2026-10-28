@@ -1,0 +1,6 @@
+{
+  "name": "eHub — Academic CBT & Learning Hub",
+  "description": "Complete Academic CBT Hub operating system with exams, KaTeX formulas, live classes, multi-role portal, records, and offline storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

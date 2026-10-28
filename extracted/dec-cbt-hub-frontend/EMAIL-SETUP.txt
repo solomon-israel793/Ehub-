@@ -1,0 +1,39 @@
+HOW TO SEND EMAILS STRAIGHT FROM THE EHUB SITE
+=================================================
+Why a helper is needed
+  A web page is not allowed to talk to email servers, so the site hands your message to a small mail server that YOU run.
+  That mail server sends it through an email provider. The same helper emails password-reset codes.
+
+Step 1. Pick an email account to send from
+  Easiest: a Gmail account with an App Password (Google Account > Security > 2-Step Verification > App passwords).
+  Other options: Brevo, Zoho Mail, SendGrid, Resend, or an email on your own domain.
+
+Step 2. Note the settings
+  Gmail  : host smtp.gmail.com        port 587  user = your Gmail address        password = the 16-letter App Password
+  Brevo  : host smtp-relay.brevo.com  port 587  user = login shown in Brevo      password = your SMTP key
+  Zoho   : host smtp.zoho.com         port 587  user = your Zoho address         password = app password
+
+Step 3. Start the mail server (folder: ai-proxy)
+  npm install
+  Set these settings (environment variables): SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_FROM, MAIL_SECRET (a password you invent)
+  Windows PowerShell example:
+      $env:SMTP_HOST="smtp.gmail.com"; $env:SMTP_PORT="587"; $env:SMTP_USER="you@gmail.com"; $env:SMTP_PASS="your app password"; $env:MAIL_FROM="eHub <you@gmail.com>"; $env:MAIL_SECRET="my-secret"
+  Then:  node server.js        (it listens on port 8787)
+
+Step 4. Connect the site
+  Open config.js and write:
+      window.CBT_MAIL_URL = 'http://localhost:8787/mail';
+      window.CBT_MAIL_SECRET = 'my-secret';      (same as MAIL_SECRET)
+  Reload the site.
+
+Step 5. Test
+  Master Admin > Send email > open "How to send emails straight from the site" > Send a test email to me.
+
+Step 6. For real students
+  Put the mail server online (Render, Railway or a small VPS) so it runs all day, then use its https address in config.js.
+  localhost only works on your own computer.
+
+Good to know
+  - Gmail allows roughly 500 emails per day. Mass email from a free address can land in spam.
+    For big schools use an email on your own domain with SPF and DKIM set up.
+  - Password-reset codes use the same mail server. Without it the site runs in demo mode and shows the code on screen.

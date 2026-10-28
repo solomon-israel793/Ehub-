@@ -1,0 +1,60 @@
+{
+  "id": "/",
+  "name": "eHub — Academic CBT & Learning Hub",
+  "short_name": "eHub",
+  "description": "Complete Academic CBT Hub operating system with exams, KaTeX formulas, live classes, multi-role portal, records, and offline storage.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#F3F6FB",
+  "theme_color": "#1C2541",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "url": "/?tab=dashboard",
+      "description": "Open CBT Hub Dashboard"
+    },
+    {
+      "name": "Records & Exams",
+      "url": "/?tab=records",
+      "description": "View past exam scores and analytics"
+    },
+    {
+      "name": "Study Library",
+      "url": "/?tab=library",
+      "description": "Access downloadable course materials and lecture slides"
+    }
+  ]
+}
