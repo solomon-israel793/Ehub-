@@ -3,21 +3,52 @@
   "name": "eHub — Academic CBT & Learning Hub",
   "short_name": "eHub",
   "description": "Complete Academic CBT Hub operating system with exams, KaTeX formulas, live classes, multi-role portal, records, and offline storage.",
-  "start_url": "/?source=pwa",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "any",
   "background_color": "#F3F6FB",
   "theme_color": "#1C2541",
   "lang": "en",
   "dir": "ltr",
-  "categories": ["education", "productivity"],
+  "categories": [
+    "education",
+    "productivity"
+  ],
   "prefer_related_applications": false,
   "icons": [
     {
+      "src": "/pwa-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/pwa-192x192.png",
       "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-384x384.png",
+      "sizes": "384x384",
       "type": "image/png",
       "purpose": "any"
     },
@@ -40,21 +71,70 @@
       "purpose": "any"
     }
   ],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "eHub Academic CBT Examination Portal on Desktop"
+    },
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "eHub Mobile CBT Exam and Assessment Interface"
+    }
+  ],
   "shortcuts": [
     {
-      "name": "Dashboard",
+      "name": "CBT Dashboard",
+      "short_name": "Dashboard",
       "url": "/?tab=dashboard",
-      "description": "Open CBT Hub Dashboard"
+      "description": "Open CBT Hub Dashboard",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
-      "name": "Records & Exams",
+      "name": "Academic Records",
+      "short_name": "Records",
       "url": "/?tab=records",
-      "description": "View past exam scores and analytics"
+      "description": "View past exam scores and analytics",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
-      "name": "Study Library",
+      "name": "Course Library",
+      "short_name": "Library",
       "url": "/?tab=library",
-      "description": "Access downloadable course materials and lecture slides"
+      "description": "Access downloadable course materials and lecture slides",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Live Classes",
+      "short_name": "Classes",
+      "url": "/?tab=live",
+      "description": "Join live Google Meet, Zoom, or Jitsi lectures",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ehub.academic.cbt",
+      "sha256_cert_fingerprints": [
+        "14:6D:E9:7F:0F:72:47:78:E0:96:4F:08:42:07:CF:C0:02:84:E6:E5:EE:75:A0:A4:44:03:7E:9C:16:9B:C6:16"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ehub.cbt",
+      "sha256_cert_fingerprints": [
+        "14:6D:E9:7F:0F:72:47:78:E0:96:4F:08:42:07:CF:C0:02:84:E6:E5:EE:75:A0:A4:44:03:7E:9C:16:9B:C6:16"
+      ]
+    }
+  }
+]

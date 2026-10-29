@@ -3,6 +3,7 @@ import { createServer as createViteServer } from 'vite';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 import path from 'path';
+import fs from 'fs';
 
 dotenv.config();
 
@@ -180,7 +181,84 @@ app.post('/api/ai', handleAi);
 app.post('/ai', handleAi);
 
 // ==========================================
-// 3. VITE MIDDLEWARES & DEV SERVER
+// 3. PWA & CREDENTIALS CORE ENDPOINTS
+// ==========================================
+function resolveRootOrPublic(relPath: string): string {
+  const rootPath = path.resolve(process.cwd(), relPath);
+  if (fs.existsSync(rootPath)) return rootPath;
+  const publicPath = path.resolve(process.cwd(), 'public', relPath);
+  if (fs.existsSync(publicPath)) return publicPath;
+  return rootPath;
+}
+
+app.get('/sw.js', (_req: Request, res: Response) => {
+  res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+  res.setHeader('Service-Worker-Allowed', '/');
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+  res.sendFile(resolveRootOrPublic('sw.js'));
+});
+
+const handleManifest = (_req: Request, res: Response) => {
+  res.setHeader('Content-Type', 'application/manifest+json; charset=utf-8');
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+  res.sendFile(resolveRootOrPublic('manifest.json'));
+};
+app.get('/manifest.json', handleManifest);
+app.get('/manifest.webmanifest', handleManifest);
+app.get('/.well-known/manifest.webmanifest', handleManifest);
+
+app.get('/offline.html', (_req: Request, res: Response) => {
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.sendFile(resolveRootOrPublic('offline.html'));
+});
+
+const handleAssetLinks = (_req: Request, res: Response) => {
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+
+  // Search directly at root first (no folder), then public/, then .well-known/
+  const candidates = [
+    path.resolve(process.cwd(), 'assetlinks.json'),
+    path.resolve(process.cwd(), 'public/assetlinks.json'),
+    path.resolve(process.cwd(), 'public/.well-known/assetlinks.json')
+  ];
+  for (const p of candidates) {
+    if (fs.existsSync(p)) {
+      return res.sendFile(p);
+    }
+  }
+  return res.json([
+    {
+      relation: ["delegate_permission/common.handle_all_urls"],
+      target: {
+        namespace: "android_app",
+        package_name: "com.ehub.academic.cbt",
+        sha256_cert_fingerprints: [
+          "14:6D:E9:7F:0F:72:47:78:E0:96:4F:08:42:07:CF:C0:02:84:E6:E5:EE:75:A0:A4:44:03:7E:9C:16:9B:C6:16"
+        ]
+      }
+    }
+  ]);
+};
+
+app.get('/assetlinks.json', handleAssetLinks);
+app.get('/.well-known/assetlinks.json', handleAssetLinks);
+app.options(['/assetlinks.json', '/.well-known/assetlinks.json', '/manifest.json', '/manifest.webmanifest', '/sw.js'], (_req: Request, res: Response) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  res.sendStatus(204);
+});
+
+// ==========================================
+// 4. VITE MIDDLEWARES & DEV SERVER
 // ==========================================
 async function startServer() {
   const vite = await createViteServer({

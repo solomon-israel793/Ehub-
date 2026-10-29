@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="1334" viewBox="0 0 750 1334">
+  <defs>
+    <style>
+      .txt { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .bold { font-weight: 700; }
+      .semi { font-weight: 600; }
+      .med { font-weight: 500; }
+      .shadow { filter: drop-shadow(0 4px 16px rgba(0,0,0,0.08)); }
+    </style>
+    <linearGradient id="mNavGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1C2541"/>
+      <stop offset="100%" stop-color="#0B132B"/>
+    </linearGradient>
+    <linearGradient id="pillGradM" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF9800"/>
+      <stop offset="100%" stop-color="#F57C00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="750" height="1334" fill="#F4F7FC"/>
+
+  <!-- Mobile Status Bar -->
+  <rect width="750" height="44" fill="#1C2541"/>
+  <text x="44" y="30" class="txt bold" font-size="16" fill="#FFFFFF">09:41</text>
+  <text x="630" y="30" class="txt semi" font-size="16" fill="#FFFFFF">5G  100%</text>
+
+  <!-- App Bar -->
+  <rect y="44" width="750" height="74" fill="url(#mNavGrad)"/>
+  
+  <!-- eHub Brand -->
+  <text x="32" y="92" class="txt bold" font-size="32" fill="#2196F3" font-style="italic">e</text>
+  <rect x="52" y="68" width="64" height="30" rx="15" fill="url(#pillGradM)"/>
+  <text x="64" y="90" class="txt bold" font-size="18" fill="#FFFFFF">hub</text>
+
+  <!-- Timer badge -->
+  <rect x="520" y="64" width="190" height="36" rx="8" fill="#EF4444"/>
+  <text x="544" y="88" class="txt bold" font-size="16" fill="#FFFFFF">⏱ 00:44:18</text>
+
+  <!-- Subject Title Bar -->
+  <rect y="118" width="750" height="64" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="32" y="146" class="txt bold" font-size="18" fill="#0F172A">GST 101: Use of English &amp; Communication</text>
+  <text x="32" y="168" class="txt med" font-size="13" fill="#64748B">Question 14 of 40 • Continuous Assessment</text>
+
+  <!-- Progress bar -->
+  <rect x="32" y="196" width="686" height="8" rx="4" fill="#E2E8F0"/>
+  <rect x="32" y="196" width="240" height="8" rx="4" fill="#2563EB"/>
+
+  <!-- Question Card -->
+  <rect x="32" y="224" width="686" height="720" rx="20" fill="#FFFFFF" class="shadow"/>
+
+  <!-- Question Tag -->
+  <rect x="64" y="254" width="130" height="28" rx="6" fill="#EFF6FF"/>
+  <text x="76" y="273" class="txt bold" font-size="12" fill="#2563EB">MCQ QUESTION</text>
+
+  <text x="64" y="324" class="txt semi" font-size="22" fill="#0F172A">Choose the option that best completes</text>
+  <text x="64" y="358" class="txt semi" font-size="22" fill="#0F172A">the sentence below:</text>
+
+  <rect x="64" y="386" width="622" height="72" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="88" y="430" class="txt semi" font-size="20" fill="#1E293B">"Neither the lecturer nor the students ______</text>
+  <text x="88" y="456" class="txt semi" font-size="20" fill="#1E293B">present at the orientation hall yesterday."</text>
+
+  <!-- Option A -->
+  <rect x="64" y="482" width="622" height="74" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <circle cx="106" cy="519" r="16" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="98" y="525" class="txt bold" font-size="17" fill="#475569">A</text>
+  <text x="144" y="526" class="txt med" font-size="19" fill="#1E293B">was</text>
+
+  <!-- Option B (Selected) -->
+  <rect x="64" y="574" width="622" height="74" rx="14" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5"/>
+  <circle cx="106" cy="611" r="16" fill="#2563EB"/>
+  <text x="98" y="617" class="txt bold" font-size="17" fill="#FFFFFF">B</text>
+  <text x="144" y="618" class="txt bold" font-size="19" fill="#1D4ED8">were</text>
+  <circle cx="636" cy="611" r="12" fill="#2563EB"/>
+  <path d="M 630 611 L 634 615 L 642 607" stroke="#FFFFFF" stroke-width="2.5" fill="none"/>
+
+  <!-- Option C -->
+  <rect x="64" y="666" width="622" height="74" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <circle cx="106" cy="703" r="16" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="98" y="709" class="txt bold" font-size="17" fill="#475569">C</text>
+  <text x="144" y="710" class="txt med" font-size="19" fill="#1E293B">is</text>
+
+  <!-- Option D -->
+  <rect x="64" y="758" width="622" height="74" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+  <circle cx="106" cy="795" r="16" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="98" y="801" class="txt bold" font-size="17" fill="#475569">D</text>
+  <text x="144" y="802" class="txt med" font-size="19" fill="#1E293B">are</text>
+
+  <!-- Explanation note -->
+  <text x="64" y="874" class="txt med" font-size="13" fill="#64748B">Rule of Proximity: The verb agrees with the closer subject ("students" -&gt; plural).</text>
+
+  <!-- PWA Install Banner -->
+  <rect x="32" y="964" width="686" height="74" rx="14" fill="#1C2541"/>
+  <circle cx="72" cy="1001" r="20" fill="#2196F3"/>
+  <text x="66" y="1007" class="txt bold" font-size="16" fill="#FFFFFF">📥</text>
+  <text x="108" y="995" class="txt bold" font-size="15" fill="#FFFFFF">Install eHub App</text>
+  <text x="108" y="1017" class="txt" font-size="13" fill="#94A3B8">PWA 100% Offline Capable • Fast Access</text>
+  <rect x="560" y="981" width="136" height="40" rx="8" fill="#10B981"/>
+  <text x="590" y="1006" class="txt bold" font-size="14" fill="#FFFFFF">INSTALL</text>
+
+  <!-- Floating Action Buttons -->
+  <rect x="32" y="1058" width="140" height="54" rx="12" fill="#E2E8F0"/>
+  <text x="64" y="1092" class="txt semi" font-size="17" fill="#334155">◀ Prev</text>
+
+  <rect x="188" y="1058" width="120" height="54" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+  <text x="220" y="1092" class="txt semi" font-size="17" fill="#B45309">★ Flag</text>
+
+  <rect x="324" y="1058" width="180" height="54" rx="12" fill="#2563EB"/>
+  <text x="372" y="1092" class="txt semi" font-size="17" fill="#FFFFFF">Next ▶</text>
+
+  <rect x="520" y="1058" width="198" height="54" rx="12" fill="#10B981"/>
+  <text x="554" y="1092" class="txt bold" font-size="17" fill="#FFFFFF">✓ Submit</text>
+
+  <!-- Bottom Mobile Nav Tabbar -->
+  <rect y="1234" width="750" height="100" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="80" y="1275" class="txt bold" font-size="24" fill="#2563EB">📊</text>
+  <text x="68" y="1302" class="txt semi" font-size="12" fill="#2563EB">Dashboard</text>
+
+  <text x="260" y="1275" class="txt bold" font-size="24" fill="#64748B">📝</text>
+  <text x="252" y="1302" class="txt med" font-size="12" fill="#64748B">Records</text>
+
+  <text x="440" y="1275" class="txt bold" font-size="24" fill="#64748B">📚</text>
+  <text x="435" y="1302" class="txt med" font-size="12" fill="#64748B">Library</text>
+
+  <text x="620" y="1275" class="txt bold" font-size="24" fill="#64748B">👤</text>
+  <text x="612" y="1302" class="txt med" font-size="12" fill="#64748B">Account</text>
+</svg>
